@@ -30,6 +30,7 @@ app.get("/myget", (req,res)=>{
 app.post("/mypost", async (req,res)=>{
 
     console.log(req.body);
+    console.log(req.body.firstname);
     console.log(req.files);
 
     let result;
@@ -61,8 +62,8 @@ app.post("/mypost", async (req,res)=>{
     
 
     details ={
-        firstname: req.body.Firstname,
-        lastname: req.body.Lastname,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         result,
         imageArray
     }
@@ -83,4 +84,4 @@ app.get("/mypostform", (req,res)=>{
 
 })
 
-app.listen(4001 , ()=> console.log(`Server is running at port 4000`));
+app.listen(4000 , ()=> console.log(`Server is running at port 4000`));
